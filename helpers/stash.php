@@ -80,9 +80,9 @@ class stash_Core
 	protected function create_token()
 	{
 		// Token will always be 64 chars, as uniqid is 13 chars
-		$unique_part = uniqid();
-		$secure_part = text::random('alnum', 51);
-		return $unique_part.$secure_part;
+		$unique = uniqid();
+		$hard_to_guess = text::random('alnum', 51);
+		return $unique.$hard_to_guess;
 	}
 	
 	
