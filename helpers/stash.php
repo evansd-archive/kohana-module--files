@@ -1,7 +1,7 @@
 <?php
 class stash_Core
 {
-	public function store($file)
+	public function save($file)
 	{
 		// Check there is an uploaded file
 		if (empty($file['tmp_name']) OR ! is_uploaded_file($file['tmp_name'])) return FALSE;
@@ -26,7 +26,7 @@ class stash_Core
 	}
 	
 	
-	public function fetch($token, $key = NULL)
+	public function load($token, $key = NULL)
 	{
 		if(stash::valid($token))
 		{

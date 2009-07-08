@@ -23,7 +23,7 @@ class ORM_Files extends ORM
 	{
 		if( ! is_array($stash))
 		{
-			$stash = stash::fetch($stash);
+			$stash = stash::load($stash);
 		}
 
 		$this->remove_file($field);
