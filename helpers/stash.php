@@ -14,7 +14,7 @@ class stash_Core
 		
 		// Stash meta data
 		unset($file['tmp_name']);
-		$meta = serialize($file);
+		$meta = json_encode($file);
 		file_put_contents($dir.$token.'_meta', $meta);
 		
 		if(mt_rand(1, 100) <= Kohana::config('stash.gc_probability'))
@@ -33,7 +33,7 @@ class stash_Core
 			$dir = stash::get_directory();
 			
 			$meta = file_get_contents($dir.$token.'_meta');
-			$meta = unserialize($meta);
+			$meta = json_decode($meta, TRUE);
 			
 			$meta['tmp_name'] = $dir.$token.'_file';
 			
