@@ -3,9 +3,6 @@ class stash_Core
 {
 	public function store($file)
 	{
-		// Load file data from $_FILES if not passed as array
-		if ( ! is_array($file)) $file = $_FILES[$file];
-		
 		// Check there is an uploaded file
 		if (empty($file['tmp_name']) OR ! is_uploaded_file($file['tmp_name'])) return FALSE;
 		
