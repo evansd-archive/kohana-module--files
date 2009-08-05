@@ -211,7 +211,7 @@ class ORM_Files extends ORM
 		}
 
 		// Get original filename and extension
-		$pathinfo = pathinfo($name);
+		$pathinfo = pathinfo($name) + array('extension' => NULL);
 
 		// Limit filename and sanatise
 		$filename = text::limit_chars($pathinfo['filename'], 15, '');
