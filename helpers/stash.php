@@ -60,6 +60,17 @@ class stash_Core
 	}
 	
 	
+	public function valid_array($array)
+	{
+		if( ! is_array($array)) return FALSE;
+		foreach($array as $stash_id)
+		{
+			if( ! stash::valid($stash_id)) return FALSE;
+		}
+		return TRUE;
+	}
+	
+	
 	protected function get_directory()
 	{
 		static $dir;
